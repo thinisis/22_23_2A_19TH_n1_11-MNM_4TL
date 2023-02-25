@@ -227,7 +227,7 @@ Project Link: [https://github.com/thinisis/19TH_N1_11_12_4TL_LinhKienPC](https:/
 [license-shield]: https://img.shields.io/github/license/thinisis/19TH_N1_11_12_4TL_LinhKienPC.svg?style=for-the-badge
 [license-url]: https://github.com/thinisis/19TH_N1_11_12_4TL_LinhKienPC/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: https://linkedin.com/in/linkedin_username
+[linkedin-url]: https://linkedin.com/in/thinnguyenvn
 [product-screenshot]: images/screenshot.png
 [Next.js]: https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
 [Next-url]: https://nextjs.org/
