@@ -31,13 +31,13 @@
 <br />
 <div align="center">
   <a href="https://github.com/thinisis/19TH_N1_11_12_4TL_LinhKienPC">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+    <img src="https://thinnguyen.dev/upload/download.png" alt="Logo" width="80" height="80">
   </a>
 
 <h3 align="center">Website bán linh kiện máy tính, laptop</h3>
 
   <p align="center">
-    project_description
+    Made by 4TL
     <br />
     <a href="https://github.com/thinisis/19TH_N1_11_12_4TL_LinhKienPC"><strong>Explore the docs »</strong></a>
     <br />
@@ -195,7 +195,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@twitter_handle](https://twitter.com/twitter_handle) - email@email_client.com
+4TL_thinnguyenvn - [@twitter_handle](https://twitter.com/thinnguyenvn) - report@thinnguyen.dev
 
 Project Link: [https://github.com/thinisis/19TH_N1_11_12_4TL_LinhKienPC](https://github.com/thinisis/19TH_N1_11_12_4TL_LinhKienPC)
 
