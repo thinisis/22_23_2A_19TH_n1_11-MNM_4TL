@@ -30,7 +30,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/github_username/repo_name">
+  <a href="https://github.com/thinisis/19TH_N1_11_12_4TL_LinhKienPC">
     <img src="images/logo.png" alt="Logo" width="80" height="80">
   </a>
 
