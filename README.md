@@ -195,7 +195,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <!-- CONTACT -->
 ## Contact
 
-4TL_thinnguyenvn - [@twitter_handle](https://twitter.com/thinnguyenvn) - report@thinnguyen.dev
+4TL_thinnguyenvn - [@thinnguyenvn - 4TL](https://twitter.com/thinnguyenvn) - report@thinnguyen.dev
 
 Project Link: [https://github.com/thinisis/19TH_N1_11_12_4TL_LinhKienPC](https://github.com/thinisis/19TH_N1_11_12_4TL_LinhKienPC)
 
