@@ -225,9 +225,9 @@ Project Link: [https://github.com/thinisis/19TH_N1_11_12_4TL_LinhKienPC](https:/
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/thinnguyenvn
 [product-screenshot]: images/screenshot.png
-[PHP]: https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/PHP-logo.svg/2560px-PHP-logo.svg.png
+[PHP]: https://img.shields.io/badge/php-563D7C?style=for-the-badge&logo=php&logoColor=white
 [php-url]: https://php.net/
-[MySQL]: https://www.mysql.com/common/logos/logo-mysql-170x115.png
+[MySQL]: https://img.shields.io/badge/mysql-563D7C?style=for-the-badge&logo=mysql&logoColor=white
 [MySQL-url]: https://mysql.com/
 [Bootstrap.com]: https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white
 [Bootstrap-url]: https://getbootstrap.com
