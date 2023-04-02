@@ -20428,17 +20428,12 @@ button.is-loading::after,.loader,.select.is-loading::after,.control.is-loading::
 
 @font-face {
     font-family: fugaz one;
-    src: url(/FugazOne-Regular.ttf) format("truetype");
+    src: url(../fonts/FugazOne-Regular.ttf) format("truetype");
     font-weight: 300;
     font-style: normal
 }
 
-.summer_sale_hero {
-    background-image: linear-gradient(to right,rgba(0,0,0,0.8),rgba(0,0,0,0.8)),url(https://wallpapercave.com/wp/wp4603700.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    min-height: 500px
-}
+
 
 .adrian_shadow {
     text-shadow: 0 4px 3px rgba(0,0,0,.4),0 8px 13px rgba(0,0,0,.1),0 18px 23px rgba(0,0,0,.1)
@@ -20610,6 +20605,7 @@ main ::-webkit-scrollbar-thumb,span ::-webkit-scrollbar-thumb,ol ::-webkit-scrol
 }
 
 .marquee p {
+    text-align: center;
     white-space: nowrap;
     text-transform: uppercase;
     font-size: 24px;
@@ -21130,3 +21126,16 @@ b.usr_name{
 span.color-white{
     color: white;
 }
+
+.modal.fade .modal-dialog {
+    transition: transform 0.3s ease-out;
+    transform: translateY(-25%);
+}
+
+.modal.fade.show .modal-dialog {
+    transform: translateY(0);
+}
+
+.blur {
+    filter: blur(3px);
+  }
