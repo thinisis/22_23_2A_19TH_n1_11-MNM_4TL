@@ -13,7 +13,6 @@ if(isset($_POST['username']) && isset($_POST['password'])) {
 
     $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
     if(count($result) > 0) {
-        // Login successful
         $user_permission = $result[0]['permission']; 
         $user_id = $result[0]['id'];
         $user_avatar = $result[0]['avatar'];
@@ -26,11 +25,10 @@ if(isset($_POST['username']) && isset($_POST['password'])) {
         exit();
     }
     else {
-        // Login failed
         session_start();
         $_SESSION['login_error'] = 'Tài khoản hoặc mật khẩu không tồn tại!';
         header('Location: ../login.php');
-        exit(); // Make sure to exit after redirecting
+        exit(); 
     }
 }
 ?>

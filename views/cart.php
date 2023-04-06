@@ -1,13 +1,14 @@
 <?php
 include "./api/getitems.php";
 include "./include/format.php";
+$username = $_SESSION['username'];
 ?>
 
 <link rel="stylesheet" href="https://turbosmurfs.gg/turbosmurfs/css/plugins/bootstrap.min.css" />
 <div class="hero_ranking bg_white">
   <div class="container">
     <h1 class="text-center">Giỏ hàng</h1>
-    <p class=""><?php echo $_SESSION['username'] ?></p>
+    <p class=""><?php echo $username ?></p>
   </div>
 </div>
 <div class="bg_white border-b py-20">
@@ -127,22 +128,27 @@ if (isset($_SESSION['cart']) && !empty($_SESSION['cart'])) {
     <div class="mt-5">
     <div class="d-flex flex-column">
 <span class="nameInput mb-10 sm-5">Địa chỉ nhận hàng</span>
-<input type="text" class="form-control" value="" name="shipaddress">
+<input type="text" class="form-control" value="" id="shipaddress">
 </div>
 <div class="d-flex flex-column">
 <span class="nameInput mb-10 sm-5">Ghi chú</span>
-<input type="text" class="form-control" value="" name="note">
+<input type="text" class="form-control" value="" id="ordernote">
 </div>
 </div>
-<a class="btn btn-primary btn-sm btn_auction w-100 mt-5" href="">Đặt hàng ngay</a>
+<a class="btn btn-primary btn-sm btn_auction w-100 mt-5 btnDatNgay">Đặt hàng ngay</a>
 </div>
 
 <script>
+
+document.querySelector('.btnDatNgay').addEventListener('click', function(event) {
+    saveOrderData();
+});
+
  document.querySelector('.updateBtn').addEventListener('click', function(event) {
-    var id = event.target.getAttribute('data-id'); // Get the id from data-id attribute
-    var input = event.target.parentNode.parentNode.querySelector('#input-quantity'); // Get the input element
+    var id = event.target.getAttribute('data-id'); 
+    var input = event.target.parentNode.parentNode.querySelector('#input-quantity'); 
     var quantity = input.value;
-  var result = updateCartItem(id, quantity); // Call the updateCartItem() function
+  var result = updateCartItem(id, quantity); 
   if (result) {
     
   } else {
@@ -150,10 +156,10 @@ if (isset($_SESSION['cart']) && !empty($_SESSION['cart'])) {
   }
 });
 
-// Delete button event listener
+
 document.querySelector('.deleteBtn').addEventListener('click', function(event) {
-  var id = event.target.getAttribute('data-id'); // Get the id from data-id attribute
-  deleteCartItem(id); // Call the deleteCartItem() function
+  var id = event.target.getAttribute('data-id'); 
+  deleteCartItem(id); 
   console.log("delete clicked");
 });
 function deleteCartItem(id) {
@@ -171,7 +177,7 @@ function deleteCartItem(id) {
                 console.log("delete cart called");
     $s_id = id;
     var xhr = new XMLHttpRequest();
-    xhr.open('GET', 'api/session_unset.php?s_id='+$s_id, true); // Replace '3' with the actual value of s_id you want to unset
+    xhr.open('GET', 'api/session_unset.php?s_id='+$s_id, true);
     xhr.onreadystatechange = function() {
     if (xhr.readyState === XMLHttpRequest.DONE) {
     if (xhr.status === 200) {
@@ -209,6 +215,37 @@ function updateCartItem(id, quantity) {
   } else {
     return false;
   }
+}
+
+function saveOrderData() {
+  var o_price = <?php echo $total ?>;
+  var shipAddress = document.getElementById("shipaddress").value;
+  var note = document.getElementById("ordernote").value;
+  var username = "<?php echo $username ?>";
+console.log(o_price);
+  var xhr = new XMLHttpRequest();
+
+  xhr.open("POST", "./api/order.php", true);
+  xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+  xhr.onreadystatechange = function() {
+    if (xhr.readyState === XMLHttpRequest.DONE) {
+      if (xhr.status === 200) {
+        var response = JSON.parse(xhr.responseText);
+        console.log(response);
+      } else {
+        console.error("Error saving order data:", xhr.statusText);
+      }
+    }
+  };
+
+  var data = JSON.stringify({
+    username : username,
+    o_price: o_price,
+    shipAddress: shipAddress,
+    note: note,
+  });
+
+  xhr.send(data);
 }
 
 </script>
