@@ -85,7 +85,7 @@
 
 [![Product Name Screen Shot][product-screenshot]](https://example.com)
 
-Here's a blank template to get started: To avoid retyping too much info. Do a search and replace with your text editor for the following: `thinisis`, `19TH_N1_11_12_4TL_LinhKienPC`, `twitter_handle`, `linkedin_username`, `email_client`, `email`, `project_title`, `project_description`
+Here's a blank template to get started: To avoid retyping too much info. Do a search and replace with your text editor for the following: `thinisis`, `22_23_2A_19TH_n1_11-MNM_4TL`, `twitter_handle`, `linkedin_username`, `email_client`, `email`, `project_title`, `project_description`
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -155,7 +155,7 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 - [ ] Feature 3
     - [ ] Nested Feature
 
-See the [open issues](https://github.com/thinisis/19TH_N1_11_12_4TL_LinhKienPC/issues) for a full list of proposed features (and known issues).
+See the [open issues](https://github.com/thinisis/22_23_2A_19TH_n1_11-MNM_4TL/issues) for a full list of proposed features (and known issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -193,7 +193,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 4TL_thinnguyenvn - [@thinnguyenvn - 4TL](https://twitter.com/thinnguyenvn) - report@thinnguyen.dev
 
-Project Link: [https://github.com/thinisis/19TH_N1_11_12_4TL_LinhKienPC](https://github.com/thinisis/19TH_N1_11_12_4TL_LinhKienPC)
+Project Link: [https://github.com/thinisis/19TH_N1_11_12_4TL_LinhKienPC](https://github.com/thinisis/22_23_2A_19TH_n1_11-MNM_4TL)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -213,15 +213,15 @@ Project Link: [https://github.com/thinisis/19TH_N1_11_12_4TL_LinhKienPC](https:/
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [contributors-shield]: https://img.shields.io/github/contributors/thinisis/19TH_N1_11_12_4TL_LinhKienPC.svg?style=for-the-badge
-[contributors-url]: https://github.com/thinisis/19TH_N1_11_12_4TL_LinhKienPC/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/thinisis/19TH_N1_11_12_4TL_LinhKienPC.svg?style=for-the-badge
-[forks-url]: https://github.com/thinisis/19TH_N1_11_12_4TL_LinhKienPC/network/members
+[contributors-url]: https://github.com/thinisis/22_23_2A_19TH_n1_11-MNM_4TL/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/thinisis/22_23_2A_19TH_n1_11-MNM_4TL.svg?style=for-the-badge
+[forks-url]: https://github.com/thinisis/22_23_2A_19TH_n1_11-MNM_4TL/network/members
 [stars-shield]: https://img.shields.io/github/stars/thinisis/19TH_N1_11_12_4TL_LinhKienPC.svg?style=for-the-badge
-[stars-url]: https://github.com/thinisis/19TH_N1_11_12_4TL_LinhKienPC/stargazers
+[stars-url]: https://github.com/thinisis/22_23_2A_19TH_n1_11-MNM_4TL/stargazers
 [issues-shield]: https://img.shields.io/github/issues/thinisis/19TH_N1_11_12_4TL_LinhKienPC.svg?style=for-the-badge
-[issues-url]: https://github.com/thinisis/19TH_N1_11_12_4TL_LinhKienPC/issues
-[license-shield]: https://img.shields.io/github/license/thinisis/19TH_N1_11_12_4TL_LinhKienPC.svg?style=for-the-badge
-[license-url]: https://github.com/thinisis/19TH_N1_11_12_4TL_LinhKienPC/blob/master/LICENSE.txt
+[issues-url]: https://github.com/thinisis/22_23_2A_19TH_n1_11-MNM_4TL/issues
+[license-shield]: https://img.shields.io/github/license/thinisis/22_23_2A_19TH_n1_11-MNM_4TL.svg?style=for-the-badge
+[license-url]: https://github.com/thinisis/22_23_2A_19TH_n1_11-MNM_4TL/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/thinnguyenvn
 [product-screenshot]: images/screenshot.png
