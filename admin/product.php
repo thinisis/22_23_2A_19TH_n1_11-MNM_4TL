@@ -1,8 +1,11 @@
 <?php
 require "head.php";
 require "../api/getitems.php";
-$products = get_all_product();
-$i=1;
+
+$products = get_all_product(1,1024);
+$types  = get_type();
+$brands = get_brand();
+include "./modal/editproduct.php";
 ?>
 
   <!-- Content Wrapper. Contains page content -->
@@ -31,7 +34,13 @@ $i=1;
           <div class="col-12">
             <div class="card">
               <div class="card-header">
-                <h3 class="card-title">Quản lý sản phẩm</h3>
+                <div class="row">
+                <h3 class="card-title col-5">Quản lý sản phẩm</h3>
+                  <div class="col"></div>
+                    <button type="button" onclick="clear_all()" class="btn btn-success " data-toggle="modal" data-target="#modal-default">
+                 Thêm sản phẩm
+                </button>
+                </div>
               </div>
               <!-- /.card-header -->
               <div class="card-body">
@@ -40,11 +49,11 @@ $i=1;
                   <tr>
                   <th></th>
 
-                    <th>Name</th>
-                    <th>Type</th>
-                    <th>Price</th>
-                    <th>Active</th>
-                    <th>Setting</th>
+                  <th>Tên</th>
+                    <th>Loại</th>
+                    <th>Đơn Giá</th>
+                    <th>Kích hoạt</th>
+                    <th>Cài đặt</th>
                   </tr>
                   </thead>
                   <tbody>
@@ -58,8 +67,12 @@ $i=1;
                     <td><?php echo $prd['p_price']; ?></td>
                     <td><?php echo $prd['p_active']; ?></td>
                         <td>
-                  <a type="button" class="fas fa-edit"></a>
-                </a>  
+                        <button type="button" class="btn btn-danger deleteProduct" data-id="<?php echo $prd['p_id']; ?>">
+    Xoá
+  </button>
+  <button type="button" id="edit-btn" class="btn btn-success editProduct" onclick="document.querySelector('.addProduct').disabled = true;" data-target="#modal-default" data-toggle="modal" data-id="<?php echo $prd['p_id']; ?>">
+    Sửa
+  </button>
                   </tr>
                   <?php } ?> 
                   </tbody>
@@ -67,11 +80,11 @@ $i=1;
                   <tr>
                   <th></th>
 
-                    <th>Name</th>
-                    <th>Type</th>
-                    <th>Price</th>
-                    <th>Active</th>
-                    <th>Setting</th>
+                    <th>Tên</th>
+                    <th>Loại</th>
+                    <th>Đơn Giá</th>
+                    <th>Kích hoạt</th>
+                    <th>Cài đặt</th>
                   </tr>
                   </tfoot>
                 </table>
@@ -110,6 +123,12 @@ $i=1;
 <!-- Bootstrap 4 -->
 <script src="./plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- DataTables  & Plugins -->
+<script src="
+https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.all.min.js
+"></script>
+<link href="
+https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.min.css
+" rel="stylesheet">
 <script src="./plugins/datatables/jquery.dataTables.min.js"></script>
 <script src="./plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
 <script src="./plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
@@ -128,6 +147,56 @@ $i=1;
 <script src="./dist/js/demo.js"></script>
 <!-- Page specific script -->
 <script>
+  
+  function delete_product(p_id) {
+    console.log(p_id);
+  $.ajax({
+    url: '../api/deleteproduct.php',
+    type: 'POST',
+    data: { p_id: p_id },
+    success: function(data) {
+      Swal.fire(
+      'Đã xoá!',
+      'Thao tác thành công',
+      'success'
+    ).then((result) => {
+  if (result.isConfirmed) {
+    location.reload();
+  }
+})
+    
+    },
+    error: function() {
+      Swal.fire(
+      'Thất bại',
+      'Không có gì thay đổi',
+      'error'
+    )
+    }
+  });
+}
+  $('.deleteProduct').click(function() {
+    var p_id = $(this).data('id');
+
+    Swal.fire({
+    title: "Bạn có muốn xoá sản phẩm #"+p_id,
+    text: "Thao tác này không thể khôi phục",
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonColor: '#3085d6',
+    cancelButtonColor: '#d33',
+    confirmButtonText: 'Xoá',
+    cancelButtonText: 'Huỷ'
+  }).then((result) => {
+    if (result.isConfirmed) {
+      console.log(p_id);
+      delete_product(p_id);
+    }
+  })
+    
+});
+
+    
   $(function () {
     $("#example1").DataTable({
       "responsive": true, "lengthChange": false, "autoWidth": false,
@@ -143,6 +212,52 @@ $i=1;
       "responsive": true,
     });
   });
+
+$(".editProduct").on("click", function() {
+  // Get the data-item-id attribute from the clicked button
+  var itemId = $(this).data('id');
+  document.querySelector('.updateProduct').disabled = false;
+  console.log('clicked id'+ itemId);
+  var data = {
+        p_id: itemId // Set the item ID as the value of the p_id key
+    };
+  // Make an AJAX request to the API endpoint with the item id
+  $.ajax({
+    url: '../api/getitembyid.php?p_id='+itemId, // Replace with your actual API endpoint URL
+    type: 'GET',
+    dataType: 'json',
+    success: function(response) {
+            // Populate the modal with the data from the API response
+            console.log(response.p_name);
+            $('#productid').val(response.p_id);
+            $('#productname').val(response.p_name);
+            $('#producttype').val(response.p_type_id);
+            $('#productbrand').val(response.p_brand_id);
+            $('#productdescription').val(response.p_desc);
+            $('#productprice').val(response.p_price);
+            $('#productstock').val(response.p_stock);
+            $('#producttag').val(response.p_tag);
+            $('#productyear').val(response.p_yearr);
+            $('#productdiscount').val(response.p_sale);
+            $('#productimagename').val(response.p_image);
+            $('#img-preview').attr('src', '../img/uploads/'+response.p_image);
+            if (response.p_active == 1) {
+                $('#productactive').prop('checked', true);
+            } else {
+                $('#productactive').prop('checked', false);
+            }
+    },
+    error: function(jqXHR, textStatus, errorThrown) {
+      // Handle error
+      console.log(textStatus, errorThrown);
+    }
+  });
+});
+
 </script>
 </body>
-</html>
+
+<?php 
+include "./modal/addproduct.php";
+
+?>

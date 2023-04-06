@@ -11,6 +11,12 @@ require_once "./include/db.php";
 <meta name="theme-color" content="#2d0877" />
 <link rel="icon" type="image/png" href="./img/logos/icon.png" />
 <title>Shop linh kiện máy tính</title>
+<script src="
+https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.all.min.js
+"></script>
+<link href="
+https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.min.css
+" rel="stylesheet">
 <link rel="stylesheet" href="./css/site.css" />
 <link rel="stylesheet" href="./css/plugins/bootstrap.min.css" />
 <link rel="stylesheet" href="./css/plugins/remixicon.css" />
@@ -78,11 +84,26 @@ require_once "./include/db.php";
 </div>
 <div class="usr_control mt-2">
 <a href="usr_setting.php"><i class="ri-settings-5-fill"></i></a>
+
 <a href="logout.php"><i class="ri-logout-box-r-line"></i></a>
 <?php if(isset($_SESSION['permission'])){
-	echo '<a href="./admin"><i class="ri-admin-fill"></i></a>';
+	echo '<a href="./admin/	"><i class="ri-admin-fill"></i></a>';
 }
 ?>
+
+</div>
+<div class="d-flex space-x-20">
+<a href="cart.php"><i class="ri-shopping-cart-2-fill"></i></a>
+<?php
+session_start();
+
+if (isset($_SESSION['cart'])) {
+  $cartItemCount = count($_SESSION['cart']);
+} else {
+  $cartItemCount = 0;
+}
+?>
+<p>Có <?php echo $cartItemCount; ?> sản phẩm trong giỏ hàng</p>
 </div>
 </div>
 <?php } ?>

@@ -38,8 +38,8 @@ $i=1;
                 <table id="example2" class="table table-bordered table-hover">
                   <thead>
                   <tr>
-                  <th></th>
-                    <th>ID</th>
+
+                    <th></th>
                     <th>Username</th>
                     <th>Email</th>
                     <th>Name</th>
@@ -51,7 +51,7 @@ $i=1;
                   <tbody>
                   <?php foreach ($accounts as $acc){ ?> 
                   <tr>
-                    <td><?php echo $i++; ?></td>
+
                     <td><?php echo $acc['id']; ?></td>
                     <td><?php echo $acc['username']; ?>
                     </td>
@@ -72,12 +72,13 @@ $i=1;
                   <tfoot>
                   <tr>
                   <th></th>
-                    <th>ID</th>
+
                     <th>Username</th>
                     <th>Email</th>
                     <th>Name</th>
                     <th>Coin</th>
                     <th>Permission</th>
+                    <th>Setting</th>
                   </tr>
                   </tfoot>
                 </table>

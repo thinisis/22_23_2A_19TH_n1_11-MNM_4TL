@@ -21139,3 +21139,10 @@ span.color-white{
 .blur {
     filter: blur(3px);
   }
+
+#cart-col-name{
+    color: white;
+  }
+  #cart-row-name{
+    color: wheat;
+  }

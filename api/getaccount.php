@@ -2,7 +2,7 @@
     function get_all_account(){
 
     $root_path = $_SERVER['DOCUMENT_ROOT'];
-    require $root_path."/shop/include/db.php";
+    require $root_path."./include/db.php";
     $stmt = $conn->prepare("SELECT * from account");
     $stmt->execute();
 
