@@ -1,7 +1,7 @@
 <?php
 if(isset($_POST['username']) && isset($_POST['password'])) {
     $root_path = $_SERVER['DOCUMENT_ROOT'];
-    require_once $root_path."/shop/include/db.php";
+    require_once $root_path."./include/db.php";
 
     $username = $_POST['username'];
     $password = $_POST['password'];
@@ -20,7 +20,7 @@ if(isset($_POST['username']) && isset($_POST['password'])) {
         $user_email = $result[0]['email'];
         $name = $result[0]['name'];
         $user_coin = $result[0]['coin'];
-        require $root_path."/shop/include/session.php";
+        require $root_path."./include/session.php";
         create_session($user_id, $username, $name, $user_avatar, $user_coin, $user_permission, $user_email);
         header('Location: ../index.php');
         exit();

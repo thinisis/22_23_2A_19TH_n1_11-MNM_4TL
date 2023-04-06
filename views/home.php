@@ -1,6 +1,7 @@
 <?php
 require_once "./api/getitems.php";
-$products = get_all_product();
+$page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
+$products = get_all_product($page);
 ?>
 <body>
   <div class="hero__1">
@@ -93,12 +94,12 @@ $products = get_all_product();
 
         <!-- Item -->
         <div class="row mb-30_reset">
-        <?php foreach ($products as $product): ?> 
+        <?php if(count($products) > 0) foreach ($products as $product): ?> 
           <div class="col-xl-3 col-lg-6 col-md-6">
             <div class="card__item three">
               <div class="card_body space-y-10">
                 <div class="card_head">
-                  <img src="<?php echo $product['p_image']; ?>" alt="<?php echo $product['p_name']; ?>">
+                  <img src="/img/uploads/<?php echo $product['p_image']; ?>" alt="<?php echo $product['p_name']; ?>">
                   <a href="#" class="likes
                   space-x-3">
                     <span class="txt_sm"> <?php echo $product['p_tag']; ?> </span>
@@ -164,9 +165,39 @@ $products = get_all_product();
               </div>
             </div>
           </div>
-          <?php endforeach; ?>
+          <?php endforeach;  else
+          {
+            echo "End of list";
+          }?>
 
           <!-- End Item -->
+          <?php if (count($products) > 0): ?>
+        <div class="row">
+          <div class="col-md-12">
+            <nav aria-label="Page navigation example">
+              <ul class="pagination justify-content-center">
+                <?php if ($page > 1): ?>
+                  <li class="page-item">
+                    <a class="page-link" href="?page=<?php echo $page - 1; ?>">Trang trước</a>
+                  </li>
+                <?php endif; ?>
+
+                <?php for ($i = 1; $i <= ceil(count($products) / 4); $i++): ?>
+                  <li class="page-item <?php echo $page == $i ? 'active' : ''; ?>">
+                    <a class="page-link" href="?page=<?php echo $i; ?>"><?php echo $i; ?></a>
+                  </li>
+                <?php endfor; ?>
+
+                <?php if ($page < ceil(count($products) / 4)): ?>
+                  <li class="page-item">
+                    <a class="page-link" href="?page=<?php echo $page + 1; ?>">Trang sau</a>
+                  </li>
+                <?php endif; ?>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      <?php endif; ?>
         </div>
       </div>
       </div>
