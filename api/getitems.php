@@ -26,10 +26,8 @@
         
         $stmt->bindParam(':id', $id, PDO::PARAM_INT);
         
-        // Execute query
         $stmt->execute();
         
-        // Fetch item
         $item = $stmt->fetch(PDO::FETCH_ASSOC);
         
         if ($item) {
@@ -46,10 +44,8 @@
         
 
         
-        // Execute query
         $stmt->execute();
         
-        // Fetch item
         $types = $stmt->fetchAll(PDO::FETCH_ASSOC);
         
         if (count($types) > 0 ) {

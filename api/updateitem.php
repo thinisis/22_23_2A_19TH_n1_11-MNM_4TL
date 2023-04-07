@@ -4,10 +4,8 @@ $root_path = $_SERVER['DOCUMENT_ROOT'];
 require $root_path."./include/db.php";
 session_start();
 
-// Set the response content type to JSON
 header('Content-Type: application/json');
 
-// Get the request body
 $requestBody = file_get_contents('php://input');
 $data = json_decode($requestBody, true);
 $productId =$data['p_id'];
@@ -23,7 +21,6 @@ $productDiscount = $data['p_sale'];
 $productImage = $data['p_image'];
 $productActive = $data['p_active'];
 
-// Update the product in the database
 try {
     $stmt = $conn->prepare('UPDATE product SET 
                             p_name = :p_name,
@@ -50,7 +47,7 @@ try {
     $stmt->bindParam(':p_sale', $productDiscount);
     $stmt->bindParam(':p_image', $productImage);
     $stmt->bindParam(':p_active', $productActive);
-    $stmt->bindParam(':product_id', $productId); // Update the product_id with the appropriate value
+    $stmt->bindParam(':product_id', $productId); 
 
     $stmt->execute();
 
