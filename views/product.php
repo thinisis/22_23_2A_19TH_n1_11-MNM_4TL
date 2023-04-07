@@ -1,4 +1,5 @@
 <?php 
+include "./include/format.php";
 $item;
 $id = $_GET['id'];
 if(!isset($id)){
@@ -59,7 +60,7 @@ if (isset($_GET['action']) && $_GET['action'] == "add") {
                 <div class="d-flex justify-content-between">
                   <span class="color-white">Giá</span>
                   <span class="light_bg">
-                    <span class="currency_price" data-id="" data-original-price="" data-original-price-usd=""><?php echo $item['p_price']; ?></span>
+                    <span class="currency_price" data-id="" data-original-price="" data-original-price-usd=""><?php echo formatPrice($item['p_price']); ?></span>
                     <span class="txt_sm color_text">VNĐ</span>
                   </span>
                 </div>

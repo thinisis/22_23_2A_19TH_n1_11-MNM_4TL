@@ -1,5 +1,6 @@
 <?php
 require_once "./api/getitems.php";
+include "./include/format.php";
 $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
 $products = get_all_product($page);
 ?>
@@ -89,7 +90,7 @@ $products = get_all_product($page);
     <div class="container mt-200">
       <div class="seaction mt-100">
         <div class="section__head">
-          <h2 class="section__title mb-20"> Sản phẩm tiêu biểu</h2>
+          <h2 class="section__title mb-20"> Sản phẩm </h2>
         </div>
 
         <!-- Item -->
@@ -123,7 +124,7 @@ $products = get_all_product($page);
                     <span class="color_black
                   txt_sm">
                       <span class="currency_symbol">₫</span>
-                      <span class="currency_price" data-original-price="<?php echo $product['p_price']; ?>"><?php echo $product['p_price']; ?></span>
+                      <span class="currency_price" data-original-price="<?php echo $product['p_price']; ?>"><?php echo formatPrice($product['p_price']); ?></span>
                     </span>
                   </div>
                   <div class="d-flex
