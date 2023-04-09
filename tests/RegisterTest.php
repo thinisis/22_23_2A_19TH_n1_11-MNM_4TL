@@ -18,7 +18,6 @@ class RegisterTest extends TestCase
         ob_start();
         include "./api/register.php";
         $output = ob_get_clean();
-
         $this->assertContains('Đăng ký thành công', $output);
     }
 }
