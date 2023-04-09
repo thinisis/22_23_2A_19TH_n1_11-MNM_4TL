@@ -9,9 +9,9 @@ class RegisterTest extends TestCase
         require_once "./api/register.php";
         
         $_POST = array(
-            'username' => 'testuser',
-            'password' => 'testpassword',
-            'confirm_password' => 'testpassword',
+            'username' => 'test',
+            'password' => 'testpass',
+            'confirm_password' => 'testrepassword',
             'email' => 'testuser@example.com'
         );
         
