@@ -1,13 +1,13 @@
 <?php
-    session_start();
-    $root_path = $_SERVER['DOCUMENT_ROOT'];
-    require_once $root_path."/shop/include/db.php";
+session_start();
+$root_path = $_SERVER['DOCUMENT_ROOT'];
+require_once $root_path."./include/db.php";
 
-    if (!isset($_POST['username'], $_POST['password'], $_POST['password_confirmation'], $_POST['name'], $_POST['email'])) {
-        $_SESSION['register_error'] = 'Hãy điền đầy đủ vào các trường!';
-        header('Location: ../register.php');
-        exit(); 
-    }
+if (!isset($_POST['username'], $_POST['password'], $_POST['password_confirmation'], $_POST['name'], $_POST['email'])) {
+    $_SESSION['register_error'] = 'Hãy điền đầy đủ vào các trường!';
+    header('Location: ../register.php');
+    exit(); 
+}
 
     $username = $_POST['username'];
     $password = $_POST['password'];
